@@ -417,7 +417,8 @@ var defaultOptions = {
     waterMarkHeight: null,
     waterMarkWidth: null,
     waterMarkXCoordinate: 1,
-    waterMarkYCoordinate: 1
+    waterMarkYCoordinate: 1,
+    delay: 0
 };
 
 
@@ -1760,7 +1761,7 @@ AnimatedGIF.prototype = {
         var width = options.gifWidth;
         var gifWriter$$1 = new gifWriter(buffer, width, height, gifOptions);
         var onRenderProgressCallback = this.onRenderProgressCallback;
-        var delay = hasExistingImages ? interval * 100 : 0;
+        var delay = hasExistingImages ? interval * 100 : (options.delay || 0);
         var bufferToString = void 0;
         var gif = void 0;
 
